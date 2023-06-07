@@ -27,7 +27,7 @@
 
 # 📖 "To-Do List" Project <a name="about-project"></a>
 
-**To-Do List** project is an engaging and practical exercise that allows individuals to master the tools and best practices of HTML, CSS design and JS, using compilers suck as webpack. This project is designed to imitate an old project called [minimalist](https://web.archive.org/web/20180320194056/http://www.getminimalist.com:80/).
+The **To-Do List Project** is an engaging and practical exercise that aims to recreate the functionality of an old web app called [Minimalist](https://web.archive.org/web/20180320194056/http://www.getminimalist.com:80/). This project provides individuals with an opportunity to learn and practice the tools and best practices of webpage building, using compilers.
 
 ## 🛠 Built With <a name="built-with"></a>
 
