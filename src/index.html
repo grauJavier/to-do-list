@@ -1,11 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="./index.css" />
-  </head>
-  <body></body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To-do List</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link rel="stylesheet" type="text/css" href="./index.css" />
+</head>
+
+<body>
+  <main>
+    <section id="to-do-list">
+      <div id="to-do-list__container" class="d-col">
+        <div id="to-do-list__title" class="to-do-list__box">
+          <p id="title-box__title">Today's to do</p>
+          <i id="title-box__refresh-icon" class="bi bi-arrow-repeat"></i>
+        </div>
+        <div class="to-do-list__box">
+          <form class="d-row w-100">
+            <input type="text" id="to-do-list__input" placeholder="Add to your list..." required />
+            <i id="input-box__return-icon" class="bi bi-arrow-return-left"></i>
+          </form>
+        </div>
+        <div id="to-do-list__shelf">
+        </div>
+        <div id="to-do-list__clear-all" class="to-do-list__box">
+          <p>Clear all complete</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+<script type="module" src="./index.js"></script>
 </html>
