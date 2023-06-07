@@ -1,3 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
 body {
-    background-color: red;
+  font-family: "Open Sans", "Lucida Grande", tahoma, verdana, arial, sans-serif;
+  background-color: #dcdcdc;
+}
+
+.d-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.d-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+#to-do-list__container {
+  display: flex;
+  align-self: center;
+  justify-self: center;
+  background-color: #fff;
+  box-shadow: rgba(60, 64, 67, 0.05) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.05) 0px 2px 6px 2px;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 300;
+  max-width: 480px;
+  margin: 200px auto;
+}
+
+#to-do-list__container .bi {
+  color: #a2a2a2;
+}
+
+#to-do-list__container .bi:hover {
+  color: #333;
+}
+
+#to-do-list__title {
+  color: #545862;
+  font-weight: 400;
+}
+
+#title-box__refresh-icon {
+  transform: rotate(-60deg) scaleX(-1);
+}
+
+#to-do-list__input {
+  border: 0;
+  font-size: inherit;
+  font-style: italic;
+  width: 100%;
+}
+
+#to-do-list__input::placeholder {
+  color: #bababa;
+  font-weight: 300;
+}
+
+#to-do-list__input:focus {
+  outline: 0;
+}
+
+#input-box__return-icon:hover {
+  color: #a2a2a2 !important;
+}
+
+.to-do-list__box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 15px;
+  border-bottom: 1px solid #dcdcdc;
+  align-items: center;
+}
+
+.box__icon-text-wraper {
+  gap: 15px;
+  align-items: center;
+}
+
+.box__text--incomplete {
+  text-decoration: none;
+  color:#000;
+}
+
+.box__text--complete {
+  text-decoration: line-through;
+  color:#a2a2a2;
+}
+
+.to-do-box__check-icon {
+  color: #3990e7 !important;
+  font-size: 20px;
+}
+
+#to-do-list__clear-all {
+  background-color: #f6f6f6;
+  justify-content: center;
+}
+
+#to-do-list__clear-all p:hover {
+  text-decoration: underline;
 }
