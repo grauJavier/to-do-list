@@ -29,8 +29,9 @@ body {
   align-self: center;
   justify-self: center;
   background-color: #fff;
-  box-shadow: rgba(60, 64, 67, 0.05) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.05) 0px 2px 6px 2px;
+  box-shadow:
+    rgba(60, 64, 67, 0.05) 0 1px 2px 0,
+    rgba(60, 64, 67, 0.05) 0 2px 6px 2px;
   font-size: 15px;
   line-height: 20px;
   font-weight: 300;
@@ -92,12 +93,12 @@ body {
 
 .box__text--incomplete {
   text-decoration: none;
-  color:#000;
+  color: #000;
 }
 
 .box__text--complete {
   text-decoration: line-through;
-  color:#a2a2a2;
+  color: #a2a2a2;
 }
 
 .to-do-box__check-icon {
