@@ -2,6 +2,7 @@ import './styles.css';
 import loader from './modules/loader.js';
 import addNewTask from './modules/addNewTask.js';
 import clearCompleteTask from './modules/clearCompleteTask.js';
+import rotateRefreshIcon from './modules/rotateRefreshIcon.js';
 
 loader();
 
@@ -27,4 +28,7 @@ addNewSubmit.addEventListener('submit', (event) => {
 });
 
 clearCompleteTaskButton.addEventListener('click', () => clearCompleteTask());
-refreshIcon.addEventListener('click', () => clearCompleteTask());
+refreshIcon.addEventListener('click', () => {
+  rotateRefreshIcon();
+  clearCompleteTask();
+});

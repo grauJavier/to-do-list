@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-cycle
 import deleteTask from './deleteTask.js';
 import { completeTask, incompleteTask, switchTask } from './switchTask.js';
 import { updateTaskDescription } from './updateTaskData.js';

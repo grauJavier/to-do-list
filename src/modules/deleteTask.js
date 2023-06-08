@@ -1,6 +1,7 @@
+// eslint-disable-next-line import/no-cycle
+import loader from './loader.js';
 import updateLocalStorage from './updateLocalStorage.js';
 import updateIndex from './updateIndex.js';
-import loader from './loader.js';
 
 const deleteTask = (taskIndex) => {
   const taskShelf = document.querySelector('#to-do-list__shelf');

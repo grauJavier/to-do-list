@@ -31,7 +31,8 @@ body {
   align-self: center;
   justify-self: center;
   background-color: #fff;
-  box-shadow: rgba(60, 64, 67, 0.05) 0 1px 2px 0,
+  box-shadow:
+    rgba(60, 64, 67, 0.05) 0 1px 2px 0,
     rgba(60, 64, 67, 0.05) 0 2px 6px 2px;
   font-size: 15px;
   line-height: 20px;
@@ -56,6 +57,7 @@ body {
 }
 
 #title-box__refresh-icon {
+  transition: transform 0s;
   transform: rotate(-60deg) scaleX(-1);
 }
 
@@ -65,14 +67,12 @@ body {
   bottom: 6px;
   z-index: 1;
   background-color: #fff;
-  text-shadow: #fff;
   color: #f00 !important;
   font-size: 12px;
   line-height: 12px;
   border: 1px solid #fff;
   border-radius: 50%;
 }
-
 
 #input-box__input {
   border: 0;
