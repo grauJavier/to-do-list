@@ -37,7 +37,7 @@ listTitle.addEventListener('keydown', (event) => {
     listTitle.blur();
 
     if (listTitle.value === '') {
-      listTitle.value = 'To-do List Title';
+      listTitle.value = 'A Nice To-do List Title!';
     }
 
     listTitle.setAttribute('value', listTitle.value);
