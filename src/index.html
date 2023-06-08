@@ -15,19 +15,23 @@
     <section id="to-do-list">
       <div id="to-do-list__container" class="d-col">
         <div id="to-do-list__title" class="to-do-list__box">
-          <p id="title-box__title">Today's to do</p>
+          <input id="title-box__title" class="box__text--incomplete w-100" value="" required></input>
+          <i id="title-box__counter-icon" class=""></i>
           <i id="title-box__refresh-icon" class="bi bi-arrow-repeat"></i>
         </div>
-        <div class="to-do-list__box">
+        <div id="input-box" class="to-do-list__box">
           <form class="d-row w-100">
-            <input type="text" id="to-do-list__input" placeholder="Add to your list..." required />
-            <i id="input-box__return-icon" class="bi bi-arrow-return-left"></i>
+            <input type="text" id="input-box__input" placeholder="Add to your list..." required />
+            <button type="submit" id="input-box__submit-button">
+              <i id="input-box__return-icon" class="bi bi-arrow-return-left"></i>
+            </button>
           </form>
         </div>
         <div id="to-do-list__shelf">
+          
         </div>
         <div id="to-do-list__clear-all" class="to-do-list__box">
-          <p>Clear all complete</p>
+          <p>Clear all completed</p>
         </div>
       </div>
     </section>

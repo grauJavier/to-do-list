@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -45,35 +47,53 @@ body {
 
 #to-do-list__container .bi:hover {
   color: #333;
+  cursor: pointer;
 }
 
 #to-do-list__title {
   color: #545862;
   font-weight: 400;
+  background-color: transparent;
 }
 
 #title-box__refresh-icon {
+  transition: transform 0s;
   transform: rotate(-60deg) scaleX(-1);
 }
 
-#to-do-list__input {
+#title-box__counter-icon {
+  position: relative;
+  left: 25px;
+  bottom: 6px;
+  z-index: 1;
+  background-color: #fff;
+  color: #f00 !important;
+  font-size: 12px;
+  line-height: 12px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+
+#input-box__input {
   border: 0;
   font-size: inherit;
   font-style: italic;
+  font-weight: 300;
   width: 100%;
 }
 
-#to-do-list__input::placeholder {
+#input-box__input::placeholder {
   color: #bababa;
   font-weight: 300;
 }
 
-#to-do-list__input:focus {
+#input-box__input:focus {
   outline: 0;
 }
 
-#input-box__return-icon:hover {
-  color: #a2a2a2 !important;
+#input-box__submit-button {
+  border: 0;
+  background-color: transparent;
 }
 
 .to-do-list__box {
@@ -94,16 +114,40 @@ body {
 .box__text--incomplete {
   text-decoration: none;
   color: #000;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  background-color: transparent;
+  border: 0;
+}
+
+.box__text--incomplete:focus {
+  outline: 0;
 }
 
 .box__text--complete {
   text-decoration: line-through;
   color: #a2a2a2;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  background-color: transparent;
+  border: 0;
+}
+
+.box__text--complete:focus {
+  text-decoration: none;
+  color: #000;
+  outline: 0;
 }
 
 .to-do-box__check-icon {
   color: #3990e7 !important;
-  font-size: 20px;
+  font-size: 15px;
+}
+
+.box__three-dots-icon:hover {
+  cursor: move !important;
 }
 
 #to-do-list__clear-all {
@@ -113,4 +157,13 @@ body {
 
 #to-do-list__clear-all p:hover {
   text-decoration: underline;
+  cursor: pointer;
+}
+
+.edit {
+  background-color: #fffeca !important;
+}
+
+.edit .bi-trash3 {
+  cursor: pointer !important;
 }
