@@ -1,40 +1,30 @@
 import './styles.css';
+import loader from './modules/loader.js';
+import addNewTask from './modules/addNewTask.js';
+import clearCompleteTask from './modules/clearCompleteTask.js';
 
-let taskList = [];
+loader();
 
-function taskCreator(str) {
-  const task = {
-    description: `${str}`,
-    completed: false,
-    index: taskList.length,
-  };
-  taskList = taskList.concat(task);
-}
+const titleBox = document.querySelector('#to-do-list__title');
+const listTitle = document.querySelector('#title-box__title');
+const addNewSubmit = document.querySelector('#input-box form');
+const addNewInput = document.querySelector('#input-box__input');
+const clearCompleteTaskButton = document.querySelector('#to-do-list__clear-all p');
+const refreshIcon = document.querySelector('#title-box__refresh-icon');
 
-taskCreator('Task N°1');
-taskCreator('Task N°2');
-taskCreator('Task N°3');
-taskCreator('Task N°4');
+listTitle.addEventListener('click', () => {
+  titleBox.classList.add('edit');
+});
 
-localStorage.taskListData = JSON.stringify(taskList);
+listTitle.addEventListener('blur', () => {
+  titleBox.classList.remove('edit');
+});
 
-const taskShelf = document.querySelector('#to-do-list__shelf');
+addNewSubmit.addEventListener('submit', (event) => {
+  event.preventDefault();
+  addNewTask(addNewInput.value);
+  addNewSubmit.reset();
+});
 
-function printHTML(description, status, index) {
-  taskShelf.insertAdjacentHTML(
-    'beforeend',
-    `
-    <div class="to-do-list__box" index="${index}" completed="${status}">
-      <div class="d-row box__icon-text-wraper">
-        <i class="bi bi-square to-do-box__check-box-icon"></i>
-        <p class="box__text--incomplete">${description}</p>
-      </div>
-      <i class="bi bi-three-dots-vertical to-do-box__three-dots-icon"></i>
-    </div>
-    `,
-  );
-}
-
-for (let i = 0; i < taskList.length; i += 1) {
-  printHTML(taskList[i].description, taskList[i].completed, taskList[i].index);
-}
+clearCompleteTaskButton.addEventListener('click', () => clearCompleteTask());
+refreshIcon.addEventListener('click', () => clearCompleteTask());
