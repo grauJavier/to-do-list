@@ -68,7 +68,7 @@ The **To-Do List Project** is an engaging and practical exercise that aims to re
 
 <!-- Live Demo -->
 # 🚀 Live Demo <a name="live-demo"></a>
-To access the Live Demo [Click here!](https://graujavier.github.io/to-do-list/)
+To access the Live Demo [Click here!](https://graujavier.github.io/to-do-list/dist/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -106,7 +106,7 @@ No run test is available.
 
 ### Deployment
 
-Deployment link: https://graujavier.github.io/to-do-list/
+Deployment link: https://graujavier.github.io/to-do-list/dist/
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
