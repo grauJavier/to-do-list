@@ -38,7 +38,7 @@ body {
   line-height: 20px;
   font-weight: 300;
   max-width: 480px;
-  margin: 200px auto;
+  margin: 50px auto 0 auto;
 }
 
 #to-do-list__container .bi {

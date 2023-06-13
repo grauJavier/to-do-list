@@ -3,9 +3,9 @@ import updateLocalStorage from './updateLocalStorage.js';
 const updateIndex = () => {
   const taskList = JSON.parse(localStorage.getItem('taskListData'));
 
-  for (let i = 0; i < taskList.length; i += 1) {
-    taskList[i].index = i + 1;
-  }
+  taskList.forEach((task, index) => {
+    task.index = index + 1;
+  });
 
   updateLocalStorage(taskList);
 

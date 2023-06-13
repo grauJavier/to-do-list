@@ -6,11 +6,11 @@ import completedCounter from './completedCounter.js';
 const clearCompleteTask = () => {
   const taskShelf = document.querySelector('#to-do-list__shelf');
   let taskList = JSON.parse(localStorage.getItem('taskListData'));
-  taskList = taskList.filter((task) => task.completed === true);
+  taskList = taskList.filter((task) => task.completed);
 
-  if (taskList.length !== 0) {
+  if (taskList.length) {
     taskList = JSON.parse(localStorage.getItem('taskListData'));
-    taskList = taskList.filter((task) => task.completed !== true);
+    taskList = taskList.filter((task) => !task.completed);
 
     updateLocalStorage(taskList);
     updateIndex();

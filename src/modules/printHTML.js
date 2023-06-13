@@ -1,7 +1,6 @@
 // eslint-disable-next-line import/no-cycle
-import deleteTask from './deleteTask.js';
-import { completeTask, incompleteTask, switchTask } from './switchTask.js';
-import { updateTaskDescription } from './updateTaskData.js';
+import { taskEditOn, taskEditOff } from './editSwitches.js';
+import { switchTask } from './switchTask.js';
 
 const taskShelf = document.querySelector('#to-do-list__shelf');
 
@@ -24,39 +23,17 @@ const printHTML = (description, status, index) => {
   const taskBox = document.querySelector(`div[index="${index}"]`);
   const checkBoxIcon = taskBox.querySelector('.box__icon-text-wraper .bi');
   const taskText = taskBox.querySelector('.box__icon-text-wraper input');
-  const threeDotsIcon = taskBox.querySelector('.box__three-dots-icon');
 
   checkBoxIcon.addEventListener('click', () => {
-    if (taskBox.getAttribute('completed') === 'false') {
-      completeTask(index);
-    } else if (taskBox.getAttribute('completed') === 'true') {
-      incompleteTask(index);
-    }
+    const boolean = Boolean(taskBox.getAttribute('completed'));
+    switchTask(boolean, index);
   });
 
-  taskText.addEventListener('click', () => {
-    taskBox.classList.add('edit');
-    threeDotsIcon.classList.replace('bi-three-dots-vertical', 'bi-trash3');
-    taskBox.querySelector('.bi-trash3').addEventListener('click', () => {
-      deleteTask(index);
-    });
-  });
-
-  taskText.addEventListener('blur', () => {
-    taskBox.classList.remove('edit');
-    threeDotsIcon.classList.replace('bi-trash3', 'bi-three-dots-vertical');
-    taskText.blur();
-    taskText.setAttribute('value', taskText.value);
-    updateTaskDescription(index, taskText.value);
-  });
-
+  taskText.addEventListener('focus', () => taskEditOn(index));
+  taskText.addEventListener('blur', () => taskEditOff(index));
   taskText.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
-      taskBox.classList.remove('edit');
-      threeDotsIcon.classList.replace('bi-trash3', 'bi-three-dots-vertical');
-      taskText.blur();
-      taskText.setAttribute('value', taskText.value);
-      updateTaskDescription(index, taskText.value);
+      taskEditOff(index);
     }
   });
 };
