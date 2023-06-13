@@ -18,14 +18,12 @@ const printHTML = (description, status, index) => {
     `,
   );
 
-  switchTask(status, index);
-
   const taskBox = document.querySelector(`div[index="${index}"]`);
   const checkBoxIcon = taskBox.querySelector('.box__icon-text-wraper .bi');
   const taskText = taskBox.querySelector('.box__icon-text-wraper input');
 
   checkBoxIcon.addEventListener('click', () => {
-    const boolean = Boolean(taskBox.getAttribute('completed'));
+    const boolean = !JSON.parse(taskBox.getAttribute('completed'));
     switchTask(boolean, index);
   });
 

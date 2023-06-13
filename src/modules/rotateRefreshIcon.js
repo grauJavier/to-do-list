@@ -3,7 +3,7 @@ const rotateRefreshIcon = () => {
   let taskList = JSON.parse(localStorage.getItem('taskListData'));
   taskList = taskList.filter((task) => task.completed);
 
-  if (!taskList.length) {
+  if (taskList.length) {
     refreshIcon.style.setProperty('transition', 'transform 1s');
     refreshIcon.style.setProperty('transform', 'rotate(-420deg) scaleX(-1)');
 

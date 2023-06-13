@@ -25,6 +25,7 @@ const incompleteTask = (index) => {
     'to-do-box__check-icon',
     'to-do-box__check-box-icon',
   );
+
   taskText.classList.replace('box__text--complete', 'box__text--incomplete');
   taskBox.setAttribute('completed', false);
   updateTaskCompleted(index, false);
