@@ -12,7 +12,8 @@ const addNewTask = (str) => {
 
   taskList = taskList.concat(newTask);
   updateLocalStorage(taskList);
-  printHTML(newTask.description, newTask.completed, newTask.index);
+  printHTML(newTask.description, newTask.completed, newTask.index); 
 };
 
 export default addNewTask;
+
