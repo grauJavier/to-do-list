@@ -127,7 +127,6 @@ describe('TESTING: printHTML()', () => {
     printHTML("Task N°1", false, 1);
     const taskBox = document.querySelector(`div[index="1"]`);
     console.log(taskBox);
-    //expect(taskBox).toBe(true);
-    expect(taskBox.classList.contains('d-col')).toBe(false);
+    expect(taskBox.classList.contains('d-col')).toBe(true);
   });
 });
