@@ -6,9 +6,13 @@ import addNewTask from './addNewTask.js';
 import deleteTask from './deleteTask.js';
 import printHTML from './printHTML.js';
 
+import clearCompleteTask from './clearCompleteTask.js';
+
 jest.mock('./printHTML.js');
 jest.mock('./loader.js');
 jest.mock('./updateIndex.js');
+jest.mock('./editSwitches.js');
+jest.mock('./switchTask.js');
 
 // addNewTask()
 describe('TESTING: addNewTask()', () => {
@@ -87,16 +91,54 @@ describe('TESTING: deleteTask()', () => {
     expect(taskList.includes(taskListTester)).toBe(false);
   });
 });
+/*
+// test function for editing the task description 
 
-// testing printHTML()
+describe('TESTING: editSwitches()', () => {
+
+});
+
+// test function for updating an item's 'completed' status
+
+describe('TESTING: ()', () => {
+
+});
+
+
+// test "Clear all completed" function
+
+describe('TESTING: clearCompleteTask()', () => {
+
+  //add three task to the list
+
+  localStorage.clear();
+
+    for (let i = 1; i <= 3; i += 1) {
+      addNewTask(`Task N°${i}`);
+    }
+
+    let taskList = JSON.parse(localStorage.taskListData);
+    taskList.forEach(element => {
+    element.completed = true;
+    });
+    console.log(taskList)
+
+  
+  test('ERROR: Not deleting completed task properly', () => {
+    clearCompleteTask()
+    expect(taskList).toBe(false);
+  });
+});*/
+
+// Mock the HTML elements to test DOM manipulation functions
 
 describe('TESTING: printHTML()', () => {
-  jest.unmock('./printHTML.js');
   beforeEach(() => {
+    
     document.body.innerHTML = `
     <main>
     <section id="to-do-list">
-      <div id="to-do-list__container" class="d-col" index="1">
+      <div id="to-do-list__container" class="d-col">
         <div id="to-do-list__title" class="to-do-list__box">
           <input id="title-box__title" class="box__text--incomplete w-100" value="" required />
           <i id="title-box__counter-icon" class=""></i>
@@ -118,15 +160,16 @@ describe('TESTING: printHTML()', () => {
     </section>
   </main>
     `;
-    jest.clearAllMocks();
+//    jest.clearAllMocks();
   });
-  
+
   test('ERROR: Not adding HTML elements properly', () => {
+    jest.unmock('./printHTML.js');
     localStorage.clear();
-    console.log(document.body.innerHTML);
+
     printHTML("Task N°1", false, 1);
     const taskBox = document.querySelector(`div[index="1"]`);
-    console.log(taskBox);
-    expect(taskBox.classList.contains('d-col')).toBe(true);
+    console.log(document.body.innerHTML);
+    expect(document.body.contains(taskBox)).toBe(true);
   });
 });
