@@ -78,7 +78,6 @@ describe('TESTING: clearCompleteTask()', () => {
   });
 });
 
-
 // Mock the HTML elements to test DOM manipulation functions
 
 describe('TESTING: printHTML()', () => {
