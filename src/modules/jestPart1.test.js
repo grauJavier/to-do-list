@@ -8,15 +8,17 @@ import deleteTask from './deleteTask.js';
 jest.mock('./printHTML.js');
 jest.mock('./loader.js');
 jest.mock('./updateIndex.js');
+jest.mock('./editSwitches.js');
+jest.mock('./switchTask.js');
 
 // addNewTask()
 describe('TESTING: addNewTask()', () => {
   test('ERROR: Input for description is not saved into localStorage', () => {
-    const string = 'Task N°1';
+    const string = 'Task N°2';
     addNewTask(string);
     const taskList = JSON.parse(localStorage.taskListData);
     const taskListTester = taskList[taskList.length - 1].description;
-    expect(taskListTester).toBe(string);
+    expect(string).toBe(taskListTester);
   });
 
   test('ERROR: Completed status is not set as false', () => {
@@ -65,6 +67,7 @@ describe('TESTING: deleteTask()', () => {
     deleteTask(2, true);
 
     taskList = JSON.parse(localStorage.taskListData);
+
     expect(taskList.includes(taskListTester)).toBe(false);
   });
 
@@ -81,6 +84,7 @@ describe('TESTING: deleteTask()', () => {
     deleteTask(1, true);
 
     taskList = JSON.parse(localStorage.taskListData);
+
     expect(taskList.includes(taskListTester)).toBe(false);
   });
 });

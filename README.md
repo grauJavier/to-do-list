@@ -119,6 +119,10 @@ Deployment link: https://graujavier.github.io/to-do-list/dist/
 - Twitter: [@jgrauchile](https://twitter.com/jgrauchile)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/javiergrau)
 
+👤 **Nicolas Emiliano** (`jest.test` TDD & Framework)
+- GitHub: [@Zven94](https://github.com/Zven94)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/nicolas-bola%C3%B1ez-520372222/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
