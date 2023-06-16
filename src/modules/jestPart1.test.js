@@ -88,5 +88,3 @@ describe('TESTING: deleteTask()', () => {
     expect(taskList.includes(taskListTester)).toBe(false);
   });
 });
-
-

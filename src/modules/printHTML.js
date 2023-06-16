@@ -2,11 +2,9 @@
 import { taskEditOn, taskEditOff } from './editSwitches.js';
 import { switchTask } from './switchTask.js';
 
-
-
 const printHTML = (description, status, index) => {
   const taskShelf = document.querySelector('#to-do-list__shelf');
- 
+
   taskShelf.insertAdjacentHTML(
     'beforeend',
     `
